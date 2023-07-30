@@ -1,0 +1,53 @@
+{%extends 'cart/index.html'%}
+<style>
+    {%block css%}
+    #sub1
+        {
+            width: 40%;
+            height:40%;
+            position: absolute;
+            top:10%;
+            left:40%;
+            color:white;
+            text-align: center;
+        }
+        .custom
+        {
+            border-radius: 20%;
+            color:black;
+        }
+        {%endblock%}
+</style>
+<head>
+    <title>
+        {%block title%}Seller page{%endblock%}
+    </title>
+</head>
+<body style="background-image:url('https://i.gifer.com/9vi2.gif');">
+    <div>
+        {%block content%}
+        <div id="sub1">
+            <center><H1 style="color: aqua;">Product registration</H1></center>
+            <form autocomplete="off" method="post" enctype="multipart/form-data" style="color:black;" class="needs-validation">
+                <div class="col-md-4 mb-3" style="width: 40%;height:auto;position: absolute;top:10%;left:40%;color:white;
+            background-image: url('https://i.gifer.com/BXe0.gif');
+            background-size: cover;
+                text-align: center;
+                color:#005ce6;padding: 20px 20px 20px 20px;
+                border-radius: 5%;margin: solid black 1px;">
+                {%csrf_token%}
+                {{form.as_p}}
+                <button type="submit" name="Enter" onclick="gen()" style="border-radius: 5%;">Submit</button>
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript">
+            function gen()
+            {
+                //alert("An OTP is sent on your gmail");
+            }
+        </script>
+        {%endblock%}
+    </div>
+    
+</body>

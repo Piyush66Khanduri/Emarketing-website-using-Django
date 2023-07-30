@@ -1,0 +1,47 @@
+{%extends "cart/index.html"%}
+<html>
+    <head>
+        <title>
+            {%block title%}
+            Customer Login
+            {%endblock%}
+        </title>
+    </head>
+    <body>
+        {%block content%}
+        <div class="main">
+            <div>
+                <form method="post">
+                    <div class="col-md-4 mb-3" style="width: 40%;height:auto;position: absolute;top:20%;left:35%;color:white;
+            background-image: url('https://i.gifer.com/OSOD.gif');
+            background-size: cover;
+                text-align: center;
+                color:#005ce6;padding: 20px 20px 20px 20px;
+                border-radius: 5%;margin: solid black 1px;">
+                    {%csrf_token%}
+                    {{form.as_p}}
+                   
+                    <button type="submit" value="submit">Login</button>
+                    <center><div style="text-align: center; height:30px;width: 100px;padding: 10px 10px 10px 10px;background-color: black;color: wheat;">
+                        <a href="/buy/" style="bottom: 100px;">Register</a>
+            </div></center>
+                </form>
+            </div>
+            <script>
+                {%if mess%}
+                alert("Sorry but wrong key.")
+                {%endif%}
+                {%if lot%}
+                    const n=String(prompt("You are not loggined"));
+                    const n1=String({{inf}});
+                    {%if n1 == n %}
+                    alert("True Value")
+                    {%else%}
+                    alert("Wrong Value")
+                    {%endif%}
+                {%endif%}
+            </script>
+        </div>
+        {%endblock%}
+    </body>
+</html>

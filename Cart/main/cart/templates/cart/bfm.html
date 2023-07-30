@@ -1,0 +1,29 @@
+{%extends "cart/index.html"%}
+<html>
+    <head>
+        <title>
+            {%block title%}
+            Register
+            {%endblock%}
+        </title>
+    </head>
+    <body>
+        {%block content%}
+        <div class="main">
+            <div>
+                <form method="post">
+                    <div class="col-md-4 mb-3" style="width: 40%;height:auto;position: absolute;top:20%;left:35%;color:white;
+            background-image: url('https://i.gifer.com/OSOD.gif');
+            background-size: cover;
+                text-align: center;
+                color:#005ce6;padding: 20px 20px 20px 20px;
+                border-radius: 5%;margin: solid black 1px;">
+                    {%csrf_token%}
+                    {{form.as_p}}
+                    <button type="submit" value="submit">Register</button>
+                </form>
+            </div>
+        </div>
+        {%endblock%}
+    </body>
+</html>

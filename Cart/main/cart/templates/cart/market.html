@@ -1,0 +1,30 @@
+{%extends "cart/index.html"%}
+<html>
+    <head>
+        <title>
+            {%block title%}
+            Market
+            {%endblock%}
+        </title>
+        <style>
+            </style>
+
+        </head>
+        <body>
+                {%block content%}
+                <div style="position: absolute;left:30%">
+                    <table>
+                        {%for i in sell%}
+                        <tr style="display: flex;float: left;padding:3px 3px 3px 3px;background-color: aqua;">
+                            <td>
+                                <img src="{{i.img.url}}" alt="Loading" height="250" width="220"/><br/>
+                                {{i.pnum}}
+                            </td>
+                        </tr>
+                        {%endfor%}
+                    
+                        </table>
+                    </div>
+                {%endblock%}
+        </body>
+</html>

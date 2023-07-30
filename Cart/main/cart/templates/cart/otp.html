@@ -1,0 +1,43 @@
+{%extends 'cart/index.html'%}
+<head>
+    <style>
+        {%block css%}
+        #justify
+        {
+            width: 40%;
+            height: auto;
+            float:left;
+            position: absolute;
+            top:30%;
+            left:35%;
+            background-color: aqua;
+        }
+        {%endblock%}
+    </style>
+    <title>
+        {%block title%}
+        OTP Verification
+        {%endblock%}
+    </title>
+</head>
+<body>
+    <div>
+        {%block content%}
+        <div id="justify" style="width: 30%;height: auto;position: absolute;
+        top:40%;left:40%;text-align: center;border-radius: 10px;padding: 40px 10px 10px 10px;background-image:url(https://i.pinimg.com/originals/7b/73/6a/7b736a33be802fc2e737e3df56b4ef0e.gif);
+        background-position: center;background-size: cover;color:bisque">
+        <h5>An OTP has been sent on you gmail</h5>
+        <form method="post">
+            {%csrf_token%}
+            {{form.as_p}}
+            <button type="submit" name="buttonm" style="color: rgb(15, 15, 134);height: auto;width: auto;padding: 5px 5px 5px 5px;border-radius: 5px;">Verify</button>
+        </form>
+        </div>
+        <script>
+            {%if mess%}
+            alert("Wrong OTP")
+            {%endif%}
+        </script>
+        {%endblock%}
+    </div>
+</body>
